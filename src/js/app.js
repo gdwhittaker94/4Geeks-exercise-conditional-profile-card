@@ -16,25 +16,33 @@ function render(variables = {}) {
           <h3>${variables.city} ${variables.country}</h3>
           <ul class=${variables.socialMediaPosition}>
 
-          <li><a href="${variables.github ===
-            null}? https://www.github.com : https://www.github.com/${
-    variables.github
-  }" target="_blank"><i class="fab fa-github"></i></a></li>
+  <li><a href="${
+    variables.twitter == null
+      ? "https://www.twitter.com"
+      : `https://www.twitter.com/${variables.twitter}`
+  }" target="_blank"><i class="fab fa-twitter"></i></a>
+  </li>
 
-  <li><a href="${variables.github ===
-    null}? https://www.github.com : https://www.github.com/${
-    variables.github
-  }" target="_blank"><i class="fab fa-github"></i></a></li>
+  <li><a href="${
+    variables.github == null
+      ? "https://www.github.com"
+      : "https://www.github.com/" + variables.github
+  }" target="_blank"><i class="fab fa-github"></i></a>
+  </li>
 
-  <li><a href="${variables.linkedin ===
-    null}? https://www.linkedin.com : https://www.linkedin.com/${
-    variables.linkedin
-  }" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+  <li><a href="${
+    variables.linkedin == null
+      ? "https://www.linkedin.com"
+      : "https://www.linkedin.com/" + variables.linkedin
+  }" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </li>
 
-  <li><a href="${variables.instagram ===
-    null}? https://www.instagram.com : https://www.instagram.com/${
-    variables.instagram
-  }" target="_blank"><i class="fab fa-instagram"></i></a></li>
+  <li><a href="${
+    variables.instagram == null
+      ? "https://www.instagram.com"
+      : "https://www.instagram.com/" + variables.instagram
+  }" target="_blank"><i class="fab fa-instagram"></i></a>
+  </li>
           </ul>
         </div>
     `;
