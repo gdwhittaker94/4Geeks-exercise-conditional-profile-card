@@ -1,27 +1,5 @@
 import "../style/index.css";
 
-/**
- *  EDIT ONLY INSIDE THIS RENDER FUNCTION
- *  This function is called every time the user changes types or changes any input
- * 
-    {
-        includeCover: true, // if includeCover is true the algorithm should
-        background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da", // this is the url of the image that will used as background for the profile cover
-        avatarURL: "https://randomuser.me/api/portraits/women/42.jpg", // this is the url for the profile avatar
-        socialMediaPosition: "left", // social media bar position (left or right)
-        
-        twitter: null, // social media usernames
-        github: null,
-        linkedin: null,
-        instagram: null,
-
-        name: null,
-        lastname: null,
-        role: null,
-        country: null,
-        city: null
-    }
- */
 function render(variables = {}) {
   console.log("These are the current variables: ", variables); //print on the console
   // here we ask the logical questions to make decisions on how to build the html
@@ -37,10 +15,25 @@ function render(variables = {}) {
           <h2>${variables.role}</h2>
           <h3>${variables.city} ${variables.country}</h3>
           <ul class=${variables.socialMediaPosition}>
-            <li><a href=${variables.twitter} target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href=${variables.github} target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a href=${variables.linkedin} target="_blank"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href=${variables.instagram} target="_blank"><i class="fab fa-instagram"></i></a></li>
+
+  <li><a href="${
+    variables.twitter
+  }" target="_blank"><i class="fab fa-twitter"></i></a></li>
+
+  <li><a href="${variables.github ===
+    null}? https://www.github.com : https://www.github.com/${
+    variables.github
+  }" target="_blank"><i class="fab fa-github"></i></a></li>
+
+  <li><a href="${variables.linkedin ===
+    null}? https://www.linkedin.com : https://www.linkedin.com/${
+    variables.linkedin
+  }" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+
+  <li><a href="${variables.instagram ===
+    null}? https://www.instagram.com : https://www.instagram.com/${
+    variables.instagram
+  }" target="_blank"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -60,15 +53,15 @@ window.onload = function() {
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
-    twitter: "",
-    github: "",
-    linkedin: "",
-    instagram: "",
-    name: "Name",
-    lastname: "Last Name",
-    role: "Role",
-    country: "Country",
-    city: "City"
+    twitter: "https://www.twitter.com/",
+    github: null,
+    linkedin: null,
+    instagram: null,
+    name: null,
+    lastname: null,
+    role: null,
+    country: null,
+    city: null
   };
   render(window.variables); //render the card for the first time
 
