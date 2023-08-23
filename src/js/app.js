@@ -16,7 +16,8 @@ function render(variables = {}) {
           <h3>${variables.city} ${variables.country}</h3>
           <ul class=${variables.socialMediaPosition}>
 
-  <li><a href="${
+  <li><a href="${variables.twitter ===
+    null}? https://www.twitter.com : https://www.twitter.com/${
     variables.twitter
   }" target="_blank"><i class="fab fa-twitter"></i></a></li>
 
@@ -53,7 +54,7 @@ window.onload = function() {
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
-    twitter: "https://www.twitter.com/",
+    twitter: null,
     github: null,
     linkedin: null,
     instagram: null,
