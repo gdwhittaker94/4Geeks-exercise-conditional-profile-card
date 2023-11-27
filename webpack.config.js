@@ -64,7 +64,7 @@ module.exports = {
     new ErrorOverlayPlugin(),
     new HtmlWebpackPlugin({
         filename: "index.html",
-        template: "index.html",
+        template: "src/index.html",
         favicon: "4geeks.ico"
     }),
     new PrettierPlugin({
